@@ -20,6 +20,9 @@ dependencies:
   prisma:
     specifier: ^5.4.2
     version: 5.4.2
+  reflect-metadata:
+    specifier: ^0.1.13
+    version: 0.1.13
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@20.8.6)(typescript@5.2.2)
@@ -469,6 +472,10 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    dev: false
+
+  /reflect-metadata@0.1.13:
+    resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
     dev: false
 
   /safe-buffer@5.2.1:
