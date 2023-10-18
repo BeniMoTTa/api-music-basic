@@ -57,3 +57,17 @@ model Music {
 
   @@map("music")
 }
+
+enum typeMusics {
+  Punk
+  Deathcore
+  HeavyMetal
+  Indie
+  Grunge
+  Progress
+  Country
+  PopRock
+  FolkRock
+  HardRock
+  NewWave
+}
