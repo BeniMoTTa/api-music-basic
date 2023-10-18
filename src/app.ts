@@ -48,7 +48,7 @@ app.post(
   "/uploadProfileImage",
   profileImageUpload.single("profileImage"),
   (req, res) => {
-    if (req.file) {
+    if (req) {
       const profileImage = req.filter.filename;
       res
         .status(200)
