@@ -47,7 +47,16 @@ app.post("/uploadAudio", audioUpload.single("audio"), async (req, res) => {
 app.post(
   "/uploadProfileImage",
   profileImageUpload.single("profileImage"),
-  (req, res) => {}
+  (req, res) => {
+    if (req.file) {
+      const profileImage = req.filter.filename;
+      res
+        .status(200)
+        .json({ message: "Foto do perfil foi carregada com sucesso" });
+    } else {
+      res.status(400).json({ error: "Falha ao carregar a foto de perfil" });
+    }
+  }
 );
 
 app.use(express.json());
