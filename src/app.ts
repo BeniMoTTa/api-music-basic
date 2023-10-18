@@ -28,20 +28,20 @@ const profileImageStorage = multer.diskStorage({
 const profileImageUpload = multer({ storage: profileImageStorage });
 
 app.post("/uploadAudio", audioUpload.single("audio"), async (req, res) => {
-    try{
-        const {title} = req.body;
-        const audioData = req.filter;
+  try {
+    const { title } = req.body;
+    const audioData = req.filter;
 
-        const music = await PrismaClient.music.create({
-            data:{
-                title:title,
-                audioUrl:""
-            }
-        })
-    }
-
-
-
+    const music = await PrismaClient.music.create({
+      data: {
+        title: title,
+        audioUrl: "",
+      },
+    });
+    res.json({ message: "Áudio enviado com sucessor!" });
+  } catch (err) {
+    res.status(500).json({ error: "Ocorreu um erro ao enviar o audio" });
+  }
 });
 
 app.use(express.json());
