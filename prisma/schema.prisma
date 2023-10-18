@@ -27,6 +27,7 @@ model Users {
   number         String     @db.VarChar(127)
   complement     String     @db.VarChar(127)
   user_typeMusic String     @db.VarChar(20)
+  profileImage   String?
   comments       Comments[]
   music          Music[]
 
