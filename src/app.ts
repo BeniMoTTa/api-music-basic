@@ -44,6 +44,12 @@ app.post("/uploadAudio", audioUpload.single("audio"), async (req, res) => {
   }
 });
 
+app.post(
+  "/uploadProfileImage",
+  profileImageUpload.single("profileImage"),
+  (req, res) => {}
+);
+
 app.use(express.json());
 app.use(cors());
 
