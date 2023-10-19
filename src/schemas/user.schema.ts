@@ -1,7 +1,7 @@
 import { hashSync } from "bcryptjs";
 import { z } from "zod";
 
-const userSchema = z.object({
+export const userSchema = z.object({
   id: z.number(),
   name: z.string().max(127),
   email: z.string().email().max(127),
@@ -21,3 +21,35 @@ const userSchema = z.object({
   user_color: z.string(),
   profileImage: z.string().nullable(),
 });
+
+export const resetEmailSchema = z.object({
+  to: z.string().max(127),
+  subject: z.string().max(127),
+  text: z.string().max(127),
+});
+
+export const userSchemaRequest = userSchema.omit({
+  id: true,
+  user_color: true,
+  reset_password: true,
+});
+
+export const userSchemaColorRequest = userSchema.omit({
+  id: true,
+});
+
+export const userSchemaResponse = userSchema.omit({
+  password: true,
+});
+
+export const userSchemaResetPasswordResponse = userSchema.omit({
+  reset_password: true,
+});
+
+export const userSchemaUpdate = userSchema
+  .omit({
+    id: true,
+    user_color: true,
+    reset_password: true,
+  })
+  .partial();
