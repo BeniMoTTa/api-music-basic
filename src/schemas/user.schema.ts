@@ -16,4 +16,8 @@ const userSchema = z.object({
   cep: z.string().max(8),
   state: z.string().max(127),
   city: z.string().max(127),
+  number: z.string().max(127),
+  complement: z.string().nullable(),
+  user_color: z.string(),
+  profileImage: z.string().nullable(),
 });
