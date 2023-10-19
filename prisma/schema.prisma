@@ -19,7 +19,6 @@ model Users {
   cpf            String     @unique @db.VarChar(11)
   phone          String     @db.VarChar(11)
   birthdate      String     @db.VarChar(8)
-  description    String     @db.Text()
   cep            String     @db.VarChar(12)
   state          String     @db.VarChar(127)
   city           String     @db.VarChar(127)

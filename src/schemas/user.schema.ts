@@ -10,4 +10,10 @@ const userSchema = z.object({
     .max(60)
     .transform((password) => hashSync(password, 10)),
   reset_password: z.string().max(127).nullable(),
+  cpf: z.string().max(11),
+  phone: z.string().max(11),
+  birthdate: z.string().max(8),
+  cep: z.string().max(8),
+  state: z.string().max(127),
+  city: z.string().max(127),
 });
