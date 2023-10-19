@@ -25,7 +25,7 @@ model Users {
   street         String     @db.VarChar(127)
   number         String     @db.VarChar(127)
   complement     String     @db.VarChar(127)
-  user_typeMusic String     @db.VarChar(20)
+  user_typeMusic typeMusics @default(HeavyMetal)
   user_color     String     @db.VarChar(12)
   profileImage   String?
   comments       Comments[]
@@ -39,11 +39,10 @@ model Comments {
   description String   @db.Text()
   created_at  DateTime @default(now())
   edited      Boolean? @default(false) @db.Boolean()
-  music_id    Int?
   user        Users?   @relation(fields: [user_id], references: [id], onDelete: Cascade)
   user_id     Int?
-  Music       Music?   @relation(fields: [musicId], references: [id])
-  musicId     Int?
+  Music       Music?   @relation(fields: [music_id], references: [id])
+  music_id    Int?
 
   @@map("comments")
 }
