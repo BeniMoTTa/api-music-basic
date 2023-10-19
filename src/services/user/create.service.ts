@@ -1,1 +1,5 @@
-// export const createUserService = async(data);
+
+
+
+
+export const createUserService = async(data:)

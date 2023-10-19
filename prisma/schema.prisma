@@ -48,12 +48,14 @@ model Comments {
 }
 
 model Music {
-  id       Int        @id @default(autoincrement())
-  title    String
-  audioUrl String
-  user     Users?     @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  user_id  Int
-  comments Comments[]
+  id          Int        @id @default(autoincrement())
+  title       String
+  audioUrl    String
+  image       String
+  description String     @db.Text()
+  user        Users?     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id     Int
+  comments    Comments[]
 
   @@map("music")
 }
