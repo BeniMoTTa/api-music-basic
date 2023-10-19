@@ -49,7 +49,7 @@ app.post(
   profileImageUpload.single("profileImage"),
   (req, res) => {
     if (req) {
-      const profileImage = req.filter.filename;
+      const profileImage = req.filter;
       res
         .status(200)
         .json({ message: "Foto do perfil foi carregada com sucesso" });
