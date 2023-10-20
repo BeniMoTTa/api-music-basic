@@ -1,7 +1,7 @@
 import { AppError } from "../../errors/errors";
 import { prisma } from "../../server";
 import { randomUUID } from "node:crypto";
-import {emailService}
+// import {emailService}
 
 export const forgotPasswordService = async (email: string): Promise<void> => {
   const user = await prisma.users.findFirst({
