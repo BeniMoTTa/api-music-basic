@@ -2,6 +2,7 @@ import { Users } from "@prisma/client";
 import { TLoginRequest } from "../../interfaces/login.interfaces";
 import { prisma } from "../../server";
 import { AppError } from "../../errors/errors";
+import jwt from "jsonwebtoken";
 
 export const createTokenService = async ({
   email,
@@ -17,8 +18,9 @@ export const createTokenService = async ({
   }
 
   const token: string = jwt.sign(
-    { isSeller: user.is_seller },
+    { isSeller: user.name },
     process.env.SECRET_KEY!,
     { expiresIn: process.env.EXPIRES_IN, subject: user.id.toString() }
   );
+  return { token: token, user_id: user.id, message: `Bem vindo, ${user.name}` };
 };
