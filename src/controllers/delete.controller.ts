@@ -7,4 +7,5 @@ export const deleteUserController = async (
 ): Promise<Response> => {
   const userId: number = +req.params.id;
   await deleteUserService(userId);
+  return res.status(204).json(`The user is deleted from our Database`);
 };
