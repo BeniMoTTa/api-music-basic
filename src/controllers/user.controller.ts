@@ -11,5 +11,5 @@ export const createUserController = async (
 ): Promise<Response> => {
   const data: TUserRequestWithColor = req.body;
   const newUser: TUserResponse = await createUserService(data);
-  return res.status(201);
+  return res.status(201).json(newUser);
 };
