@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import {
   TUserRequestWithColor,
   TUserResponse,
-} from "../interfaces/user.interfaces";
-import { createUserService } from "../services/user/create.service";
+} from "../../interfaces/user.interfaces";
+import { createUserService } from "../../services/user/create.service";
 
 export const createUserController = async (
   req: Request,
