@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { TUserUpdateRequest } from "../../interfaces/user.interfaces";
+import {
+  TUserResponse,
+  TUserUpdateRequest,
+} from "../../interfaces/user.interfaces";
+import { updateUserService } from "../../services/user/updateUser.service";
 
 export const updateUserController = async (
   req: Request,
@@ -7,4 +11,8 @@ export const updateUserController = async (
 ): Promise<Response> => {
   const userId: number = +req.params.id;
   const updatedValues: TUserUpdateRequest = req.body;
+  const updatedUser: TUserResponse = await updateUserService(
+    updatedValues,
+    userId
+  );
 };
