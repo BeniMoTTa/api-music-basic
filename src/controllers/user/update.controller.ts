@@ -7,7 +7,7 @@ import { updateUserService } from "../../services/user/updateUser.service";
 
 export const updateUserController = async (
   req: Request,
-  req: Response
+  res: Response
 ): Promise<Response> => {
   const userId: number = +req.params.id;
   const updatedValues: TUserUpdateRequest = req.body;
@@ -15,4 +15,6 @@ export const updateUserController = async (
     updatedValues,
     userId
   );
+
+  return res.json(updatedUser);
 };
