@@ -7,4 +7,5 @@ export const forgotPasswordController = async (
 ): Promise<Response> => {
   const { email } = req.body;
   await forgotPasswordService(email);
+  return res.status(200).json({ message: "Token send on your email." });
 };
