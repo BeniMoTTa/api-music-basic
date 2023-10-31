@@ -9,6 +9,6 @@ export const retrieveUserController = async (
   const userId: number = +req.params.id;
 
   const user: TUserResponse = await retrieveUserService(userId);
-  // Testando funcio
+  // Testando
   return res.json(user);
 };
