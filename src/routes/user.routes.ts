@@ -8,3 +8,4 @@ export const userRouter: Router = Router();
 userRouter.post("", createUserController);
 userRouter.get("/:id", retrieveUserController);
 userRouter.delete("/:id", deleteUserController);
+userRouter.get("/:profile");
